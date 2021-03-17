@@ -40,11 +40,39 @@ $(document).ready(function() {
   ];
 
   for (var key in amici) {
-
     console.log(amici[key].Nome, amici[key].Cognome);
-
-
-
   }
+
+  console.log("");
+
+  // Esercizio Parte 3
+
+  do {
+    var risposta = prompt("Vuoi aggiungere un nuovo amico? 'Si' o 'No'");
+  } while ((risposta != "Si") && (risposta != "No"));
+
+  if (risposta == "Si") {
+
+    var nomeInserito = prompt("Inserisci un nome: ");
+    var conomeInserito = prompt("Inserisci un cognome: ");
+    var etaInserita = prompt("Inserisci l'età: ");
+
+    var amicoInserito = {
+      'Nome': nomeInserito,
+      'Cognome': conomeInserito,
+      'Età': etaInserita,
+    }
+
+    amici.push(amicoInserito);
+    console.log("Ecco i dati del tuo amico: ");
+    for (var key in amicoInserito) {
+      console.log(key, amicoInserito[key]);
+    }
+
+  } else {
+    alert("Come vuoi.");
+  }
+
+
 
 });
